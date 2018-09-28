@@ -1,0 +1,40 @@
+html{
+    height: 100%;                                
+    background: radial-gradient(circle,#fff,#ccc)
+}
+#container{
+    height:400px;
+    width: 500px;
+    background-color: #9DD2EA;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 0px 0px #009de4;
+    /* box shadow:[horizonatal offset][vertical offset] [blur radius] [optional spread radius] [color]*/
+    position:relative;
+}
+#score {
+   /* height: 40px;*/
+    float:right;
+    background-color: #F1FF92;
+    color: #888E5F;
+    padding: 8px 20px;
+    box-shadow:  0px 4px  #9da853; /*radius is 0 by default*/
+}
+
+#correct {
+    position: absolute;
+    left: 230px;
+    background-color: #42e252;
+    color: white;
+    padding: 11px;
+    display: none;
+}
+#wrong {
+    position: absolute;
+    left: 230px;
+    background-color: #de401a;
+    color: white;
+    padding: 11px;
+    display: none;
+}
