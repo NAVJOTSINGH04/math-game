@@ -3,13 +3,15 @@ html{
     background: radial-gradient(circle,#fff,#ccc)
 }
 #container{
-    height:400px;
+    height:420px;
     width: 500px;
     background-color: #9DD2EA;
     margin: 100px auto;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 0px 0px #009de4;
+   -moz-box-shadow: 0px 4px 0px 0px #009de4;
+    -webkit-box-shadow: 0px 4px 0px 0px #009de4;
     /* box shadow:[horizonatal offset][vertical offset] [blur radius] [optional spread radius] [color]*/
     position:relative;
 }
@@ -19,7 +21,9 @@ html{
     background-color: #F1FF92;
     color: #888E5F;
     padding: 8px 20px;
-    box-shadow:  0px 4px  #9da853; /*radius is 0 by default*/
+    box-shadow:  0px 4px  #9da853;
+    -moz-box-shadow:  0px 4px  #9da853;
+    -webkit-box-shadow:  0px 4px  #9da853;/*radius is 0 by default*/
 }
 
 #correct {
@@ -47,6 +51,8 @@ html{
     margin-right: auto;*/
     margin: 50px auto 10px auto;
     box-shadow: 0px 4px #535aa8;
+    -moz-box-shadow: 0px 4px #535aa8;
+    -webkitbox-shadow: 0px 4px #535aa8;
     font-size: 100px;
     text-align: center;
     font-family: cursive,sans-serif;
@@ -81,13 +87,57 @@ html{
     box-shadow: 0px 4px rgba(0,0,0,0.2);
     text-align: center;
     line-height: 85px;
+ position: relative;
+  -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+   -ms-transition: all 0.2s;
+   -moz-transition: all 0.2s; /*for different web browser*/
 }
-.box:hover{
+.box:hover, #startreset:hover{
     background-color: #9C89F6;
     color: white;
     box-shadow: 0px 4px #6b54d3;
+    -webkit-box-shadow: 0px 4px #6b54d3;
+    -moz-box-shadow: 0px 4px #6b54d3;
 }
-
+.box:active, #startreset:active{
+    box-shadow: 0px 0px #6b54d3;
+    -webkit-box-shadow: 0px 0px #6b54d3;
+    -moz-box-shadow: 0px 0px #6b54d3;
+    top: 4px;
+    
+}
 #box4 {
     margin-right: 0px;
 }
+
+#startreset {
+   width: 80px;
+    padding: 10px;
+    background-color: white;
+    margin: 0px auto;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0px 4px rgba(0,0,0,0.2);
+    text-align: center;
+     position: relative;
+  -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+   -ms-transition: all 0.2s;
+   -moz-transition: all 0.2s; /*for different web browser*/  
+}
+
+
+#time{
+    width: 150px;
+    padding: 10px;
+    position: absolute;
+    top: 400px;
+    left: 351px;
+    background-color: rgba(181,235,36,0.8);
+    border-radius: 3px;
+    box-shadow: 0px 4px rgba(0,0,0,0.2);
+    display: none;
+   
+}
+
