@@ -33,14 +33,44 @@ document.getElementById("startreset").onclick = function () {
         
         
         startcountdown();
+        //genarte mew questions answers
         qA();
         
     }
 }
+for(i=1;i<5;i++){
+document.getElementById("box" + i).onclick=function(){
+    //check is we are playing
+    if(playing == true){
+        if(this.innerHTML == z){
+            score ++;
+            document.getElementById("scorevalue").innerHTML=score;
+            
+            //hide wrong box and show right box
+            
+            hide("wrong");
+            show("correct");
+            setTimeout(function(){
+                hide("correct");
+            },1000);
+            //generate questions
+            qA();
+            
+        }else{
+            //wrong answer
+            hide("correct");
+            show("wrong");
+            setTimeout(function(){
+                hide("wrong");
+            },1000);
+        }
+        
+    }
+}
+}
 
 
-
-//function
+//functions
 
 //start count down
 function startcountdown(){
@@ -94,9 +124,9 @@ function qA(){
         
             }
             
-            while(wrongAnswer == z)
+            while(answers.indexOf(wrongAnswer)> -1)
             document.getElementById("box"+i).innerHTML= wrongAnswer;
-            
+            answers.push(wrongAnswer);
         }
     }
 }
