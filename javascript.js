@@ -2,6 +2,7 @@ var playing = false;
 var score;
 var action;
 var timeremaining;
+var z;
 //if we click on the start/reset
 document.getElementById("startreset").onclick = function () {
     //if we are playing
@@ -32,6 +33,7 @@ document.getElementById("startreset").onclick = function () {
         
         
         startcountdown();
+        qA();
         
     }
 }
@@ -71,3 +73,31 @@ function hide (Id){
 function show (Id){
     document.getElementById(Id).style.display = "block";
 }
+function qA(){
+    var x = 1+Math.round(Math.random()*9);
+    var y = 1+Math.round(Math.random()*9);
+     z= x*y;
+    
+    document.getElementById("question").innerHTML= x + "x" + y;
+     var correctPosition= 1+Math.round(Math.random()*3);
+     document.getElementById("box"+correctPosition).innerHTML=z; // fill with correct answer
+    
+    var answers =[z];
+    
+    for(i=1;i<5;i++){
+        if( i !== correctPosition ){
+            var wrongAnswer ;
+            do{
+                
+                
+            wrongAnswer=(1+Math.round(Math.random()*9))*(1+Math.round(Math.random()*9));
+        
+            }
+            
+            while(wrongAnswer == z)
+            document.getElementById("box"+i).innerHTML= wrongAnswer;
+            
+        }
+    }
+}
+
